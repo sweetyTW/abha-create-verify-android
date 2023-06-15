@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateABHAFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="left|center"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Header Text"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:padding="12dp"
+            android:gravity="start" />
+
+        <EditText
+            android:id="@+id/textInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Type something..."
+            android:textColor="#b3b3b3"
+            android:textColorHint="#b3b3b3"
+            android:background="#b3dede"
+            android:padding="8dp"
+            android:inputType="text"
+            android:minHeight="55dp"
+            android:minWidth="280dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="start"
+            android:layout_marginTop="12dp">
+
+            <CheckBox
+                android:id="@+id/consentCheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+              />
+<!--                android:button="@drawable/custom_checkbox_selector"  &lt;!&ndash; Replace with your own drawable for checkbox selector &ndash;&gt;-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I agree to the terms and conditions" />
+
+        </LinearLayout>
+
+        <Button
+            android:layout_marginTop="50dp"
+            android:id="@+id/button_first"
+            android:minHeight="55dp"
+            android:minWidth="280dp"
+            android:layout_height="wrap_content"
+            android:text="@string/next"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:backgroundTint="@color/yellow"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content" />
+
+    </LinearLayout>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

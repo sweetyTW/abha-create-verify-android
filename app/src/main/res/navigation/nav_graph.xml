@@ -3,26 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/CreateABHAFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.abha_create_verify_android.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        android:id="@+id/CreateABHAFragment"
+        android:name="com.example.abha_create_verify_android.CreateABHAFragment"
+        android:label="@string/create_abha"
+        tools:layout="@layout/fragment_create_abha">
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            app:destination="@id/VerifyABHAFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.abha_create_verify_android.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        android:id="@+id/VerifyABHAFragment"
+        android:name="com.example.abha_create_verify_android.VerifyABHAFragment"
+        android:label="@string/verify_abha"
+        tools:layout="@layout/fragment_verify_abha">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            app:destination="@id/CreateABHAFragment" />
     </fragment>
 </navigation>
