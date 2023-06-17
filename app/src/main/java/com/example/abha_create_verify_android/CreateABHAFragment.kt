@@ -24,6 +24,13 @@ class CreateABHAFragment : Fragment() {
     ): View? {
 
         _binding = FragmentCreateAbhaBinding.inflate(inflater, container, false)
+
+        val includedTextViewLayoutBinding = binding.includedTextViewLayout
+        includedTextViewLayoutBinding.headerText.text = "New Text"
+
+        val includedLayoutBinding = binding.includedButtonLayout
+        includedLayoutBinding.buttonText.text = "Proceed"
+
         return binding.root
 
     }
