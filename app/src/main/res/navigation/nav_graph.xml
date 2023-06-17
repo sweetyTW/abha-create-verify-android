@@ -3,7 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/CreateABHAFragment">
+    app:startDestination="@id/HomeFragment">
+
+    <fragment
+        android:id="@+id/HomeFragment"
+        android:name="com.example.abha_create_verify_android.HomeFragment"
+        android:label="@string/create_abha"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_HomeFragment_to_CreateABHAFragment"
+            app:destination="@id/CreateABHAFragment">
+        </action>
+
+        <action
+            android:id="@+id/action_HomeFragment_to_VerifyABHAFragment"
+            app:destination="@id/VerifyABHAFragment">
+        </action>
+    </fragment>
 
     <fragment
         android:id="@+id/CreateABHAFragment"
