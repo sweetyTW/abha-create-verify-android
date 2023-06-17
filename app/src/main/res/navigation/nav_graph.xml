@@ -22,6 +22,7 @@
         </action>
     </fragment>
 
+
     <fragment
         android:id="@+id/CreateABHAFragment"
         android:name="com.example.abha_create_verify_android.CreateABHAFragment"
@@ -29,9 +30,26 @@
         tools:layout="@layout/fragment_create_abha">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/VerifyABHAFragment" />
+            android:id="@+id/action_CreateABHAFragment_to_CreateABHANextFragment"
+            app:destination="@id/CreateABHANextFragment">
+            <argument
+                android:name="arg"
+                app:argType="string" />
+        </action>
+
     </fragment>
+
+    <fragment
+        android:id="@+id/CreateABHANextFragment"
+        android:name="com.example.abha_create_verify_android.CreateABHANextFragment"
+        android:label="@string/create_abha"
+        tools:layout="@layout/fragment_create_abha_next">
+
+        <action
+            android:id="@+id/action_CreateABHANextFragment_to_CreateABHAFragment"
+            app:destination="@id/CreateABHAFragment" />
+    </fragment>
+
     <fragment
         android:id="@+id/VerifyABHAFragment"
         android:name="com.example.abha_create_verify_android.VerifyABHAFragment"
@@ -42,4 +60,5 @@
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/CreateABHAFragment" />
     </fragment>
+
 </navigation>
