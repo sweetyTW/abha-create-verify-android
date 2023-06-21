@@ -57,8 +57,8 @@
         tools:layout="@layout/fragment_verify_abha">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/ValidationFragment" />
+            android:id="@+id/action_VerifyABHAFragment_to_HomeFragment"
+            app:destination="@+id/HomeFragment" />
     </fragment>
 
 </navigation>
