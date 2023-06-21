@@ -8,16 +8,9 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.abha_create_verify_android.databinding.FragmentHomeBinding
 
-
-/**
- * A simple [Fragment] subclass as the default destination in the navigation.
- */
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -41,7 +34,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.CreateABHAFragment.buttonText.setOnClickListener {
-            findNavController().navigate(R.id.action_HomeFragment_to_CreateABHAFragment)
+            findNavController().navigate(R.id.action_HomeFragment_to_ValidationFragment)
         }
 
         binding.VerifyABHAFragment.buttonText.setOnClickListener {

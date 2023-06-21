@@ -1,22 +1,19 @@
 package com.example.abha_create_verify_android
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.abha_create_verify_android.databinding.FragmentCreateAbhaBinding
+import com.example.abha_create_verify_android.databinding.FragmentValidationBinding
+import okhttp3.OkHttpClient
+import okhttp3.Request
 
-/**
- * A simple [Fragment] subclass as the default destination in the navigation.
- */
-class CreateABHAFragment : Fragment() {
 
-    private var _binding: FragmentCreateAbhaBinding? = null
+class ValidationFragment : Fragment() {
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
+    private var _binding: FragmentValidationBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -24,10 +21,11 @@ class CreateABHAFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentCreateAbhaBinding.inflate(inflater, container, false)
+        _binding = FragmentValidationBinding.inflate(inflater, container, false)
 
         val includedTextViewLayoutBinding = binding.includedTextViewLayout
-        includedTextViewLayoutBinding.headerText.text = "New Text"
+        includedTextViewLayoutBinding.headerText.text = "Aadhaar Validation"
+        includedTextViewLayoutBinding.textInput.hint ="Enter your Aadhaar number"
 
         val includedLayoutBinding = binding.includedButtonLayout
         includedLayoutBinding.buttonText.text = "Proceed"
@@ -39,11 +37,10 @@ class CreateABHAFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         binding.includedButtonLayout.buttonText.setOnClickListener {
             val arg = binding.includedTextViewLayout.textInput.text.toString();
 
-            val action = CreateABHAFragmentDirections.actionCreateABHAFragmentToCreateABHANextFragment(arg)
+            val action = ValidationFragmentDirections.actionValidationFragmentToOTPFragment(arg)
             findNavController().navigate(action)
         }
 
