@@ -9,4 +9,10 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="create_abha">Create ABHA</string>
+    <string name="aadhaar_validation">Aadhaar Validation</string>
+    <string name="enter_aadhaar_number">Enter your Aadhaar Number</string>
+    <string name="do_you_agree_with_the_terms_and_conditions">Do you agree with the terms and conditions</string>
+    <string name="proceed">Proceed</string>
 </resources>
