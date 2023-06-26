@@ -11,8 +11,28 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
     <string name="create_abha">Create ABHA</string>
+    <string name="verify_abha">Verify ABHA</string>
     <string name="aadhaar_validation">Aadhaar Validation</string>
+    <string name="choose_auth_mode">Choose Authentication Mode</string>
     <string name="enter_aadhaar_number">Enter your Aadhaar Number</string>
     <string name="do_you_agree_with_the_terms_and_conditions">Do you agree with the terms and conditions</string>
     <string name="proceed">Proceed</string>
+    <string name="check_your_aadhaar_linked_mobile_number">Check your aadhaar linked mobile number</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="incorrect_otp">Incorrect OTP</string>
+    <string name="correct_otp">Correct OTP</string>
+    <string name="resend_otp">Resend OTP</string>
+    <string name="name">Name</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="dd_mm_yyyy">DD-MM-YYYY</string>
+    <string name="gender">Gender</string>
+    <string name="enter_f_m_other">Enter F/M/Other</string>
+    <string name="state">State</string>
+    <string name="enter_state">Enter State</string>
+    <string name="district">District</string>
+    <string name="enter_district">Enter District</string>
+    <string name="make_sure_your_demographics_matches_with_aadhaar">Make sure your demographics matches with aadhaar</string>
+
+
 </resources>
