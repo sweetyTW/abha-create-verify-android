@@ -14,18 +14,18 @@ import retrofit2.http.POST
 
 interface ApiService {
 
-    @POST("v2/registration/aadhaar/generateOtp")
+    @POST("hiprovider/v2/registration/aadhaar/generateOtp")
     suspend fun generateAadhaarOtp(@Body requestBody: GenerateAadhaarOTPReq): Response<GenerateAadhaarOTPResp>
 
-    @POST("v2/registration/aadhaar/verifyOTP")
+    @POST("hiprovider/v2/registration/aadhaar/verifyOTP")
     suspend fun verifyAadhaarOtp(@Body requestBody: VerifyOTPReq): Response<VerifyAadhaarOTPResp>
 
-    @POST("v2/registration/aadhaar/checkAndGenerateMobileOTP")
+    @POST("hiprovider/v2/registration/aadhaar/checkAndGenerateMobileOTP")
     suspend fun checkAndGenerateMobileOtp(@Body requestBody: GenerateMobileOTPReq): Response<GenerateMobileOTPResp>
 
-    @POST("v2/registration/aadhaar/verifyMobileOTP")
+    @POST("hiprovider/v2/registration/aadhaar/verifyMobileOTP")
     suspend fun verifyMobileOtp(@Body requestBody: VerifyOTPReq) : Response<Unit>
 
-    @POST("v2/registration/aadhaar/createHealthIdByAdhaar")
+    @POST("hiprovider/v2/registration/aadhaar/createHealthIdByAdhaar")
     suspend fun createHealthIdByAdhaarOtp(): Response<CreateABHAResp>
 }

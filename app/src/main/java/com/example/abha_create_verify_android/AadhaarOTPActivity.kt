@@ -9,10 +9,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.abha_create_verify_android.data.api.ApiHelper
 import com.example.abha_create_verify_android.data.api.RetrofitBuilder
-import com.example.abha_create_verify_android.data.model.GenerateAadhaarOTPReq
 import com.example.abha_create_verify_android.data.model.VerifyOTPReq
 import com.example.abha_create_verify_android.databinding.ActivityAadhaarOtpactivityBinding
-import com.example.abha_create_verify_android.databinding.ActivityCreateAbhaBinding
 import com.example.abha_create_verify_android.utils.Status
 
 class AadhaarOTPActivity : AppCompatActivity() {

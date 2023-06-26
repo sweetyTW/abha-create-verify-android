@@ -27,7 +27,7 @@ class MainViewModel(private val mainRepository: MainRepository) : ViewModel() {
         emit(Resource.loading(data = null))
         try {
             val res = mainRepository.generateAadhaarOtp(generateAadhaarOTPReq)
-            if(res.code() == 200)
+            if(res.code() == 202)
                 res.body()?.let {
                     emit(Resource.success(data = it))
                 }
@@ -44,7 +44,7 @@ class MainViewModel(private val mainRepository: MainRepository) : ViewModel() {
         emit(Resource.loading(data = null))
         try {
             val res = mainRepository.verifyAadhaarOtp(verifyOTPReq)
-            if(res.code() == 200)
+            if(res.code() == 202)
                 res.body()?.let {
                     emit(Resource.success(data = it))
                 }
@@ -61,7 +61,7 @@ class MainViewModel(private val mainRepository: MainRepository) : ViewModel() {
         emit(Resource.loading(data = null))
         try {
             val res = mainRepository.checkAndGenerateMobileOtp(generateMobileOTPReq)
-            if(res.code() == 200)
+            if(res.code() == 202)
                 res.body()?.let {
                     emit(Resource.success(data = it))
                 }
@@ -78,7 +78,7 @@ class MainViewModel(private val mainRepository: MainRepository) : ViewModel() {
         emit(Resource.loading(data = null))
         try {
             val res = mainRepository.verifyMobileOtp(verifyOTPReq)
-            if(res.code() == 200)
+            if(res.code() == 202)
                 res.body()?.let {
                     emit(Resource.success(data = it))
                 }
@@ -95,7 +95,7 @@ class MainViewModel(private val mainRepository: MainRepository) : ViewModel() {
         emit(Resource.loading(data = null))
         try {
             val res = mainRepository.createHealthIdByAdhaarOtp()
-            if(res.code() == 200)
+            if(res.code() == 202)
                 res.body()?.let {
                     emit(Resource.success(data = it))
                 }

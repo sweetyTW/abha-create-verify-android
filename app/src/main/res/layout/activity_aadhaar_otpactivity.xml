@@ -73,7 +73,8 @@
             android:text="@string/incorrect_otp"
             android:textColor="@color/black"
             android:textSize="13sp"
-            android:textStyle="italic" />
+            android:textStyle="italic"
+            android:visibility="invisible"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/correctOTPText"
@@ -87,7 +88,8 @@
             android:text="@string/correct_otp"
             android:textColor="@color/black"
             android:textSize="13sp"
-            android:textStyle="italic" />
+            android:textStyle="italic"
+            android:visibility="invisible"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/resendOTPText"
@@ -114,5 +116,13 @@
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textStyle="bold" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/proceedButton"
+            android:gravity="center"
+            android:visibility="invisible"/>
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -37,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@+id/aadhaarTextInputLayout"
-            android:layout_marginTop="@+id/aadhaarTextInputLayout"
+            android:layout_marginTop="1dp"
             android:layout_marginBottom="1dp"
             android:text="@string/aadhaar_validation"
             android:textColor="@color/black"
@@ -82,5 +82,6 @@
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textStyle="bold" />
+
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
