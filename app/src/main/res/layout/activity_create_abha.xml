@@ -37,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@+id/aadhaarTextInputLayout"
-            android:layout_marginTop="@+id/aadhaarTextInputLayout"
+            android:layout_marginTop="1dp"
             android:layout_marginBottom="1dp"
             android:text="@string/aadhaar_validation"
             android:textColor="@color/black"
@@ -82,5 +82,26 @@
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textStyle="bold" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/proceedButton"
+            android:gravity="center"
+            android:visibility="invisible"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/apiResponseTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/progressBar"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="1dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
