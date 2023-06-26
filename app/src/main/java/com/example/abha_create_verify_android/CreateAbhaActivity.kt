@@ -1,10 +1,10 @@
 package com.example.abha_create_verify_android
 
 import android.content.Intent
-import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 import com.example.abha_create_verify_android.databinding.ActivityCreateAbhaBinding
-
+import com.example.abha_sample.SampleAbhaActivity
 
 class CreateAbhaActivity : AppCompatActivity() {
 
