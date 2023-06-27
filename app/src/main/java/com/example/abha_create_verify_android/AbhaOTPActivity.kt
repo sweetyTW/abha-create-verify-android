@@ -1,5 +1,6 @@
 package com.example.abha_create_verify_android
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -18,6 +19,11 @@ class AbhaOTPActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbarAbha)
         supportActionBar?.title = resources.getString(R.string.create_abha)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        binding.proceedButton.setOnClickListener {
+            val intent = Intent(this, PatientBioActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
