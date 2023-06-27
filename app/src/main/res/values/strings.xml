@@ -33,6 +33,11 @@
     <string name="district">District</string>
     <string name="enter_district">Enter District</string>
     <string name="make_sure_your_demographics_matches_with_aadhaar">Make sure your demographics matches with aadhaar</string>
+    <string name="enter_mobile_number">Enter mobile number</string>
+    <string name="mobile_number_required_for_abha_creation">Mobile number required for ABHA creation</string>
+    <string name="abha_address">ABHA address</string>
+    <string name="enter_abha_address">Enter ABHA Address</string>
+    <string name="generate_default_address">Generate default address</string>
 
 
 </resources>
