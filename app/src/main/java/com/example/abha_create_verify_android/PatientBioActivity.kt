@@ -30,27 +30,12 @@ class PatientBioActivity : AppCompatActivity() {
         supportActionBar?.title = resources.getString(R.string.create_abha)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-
-
-        binding.patientName.text = patient?.fullName.toString()
-        binding.dateOfBirth.text = patient?.birthdate.toString()
-        binding.gender.text = patient?.gender.toString()
-        binding.phoneNumber.text = intent.getStringExtra("mobile").toString()
-        val address = StringBuilder()
-        listOfNotNull(
-            patient?.house,
-            patient?.street,
-            patient?.villageTownCity,
-            patient?.district,
-            patient?.state,
-            patient?.pincode
-        ).forEach { str ->
-            if (address.isNotEmpty()) {
-                address.append(", ")
-            }
-            address.append(str)
-        }
-        binding.address.text =  address.toString()
+        val patientSubject = PatientSubject.patientSubject
+        binding.patientName.text = patientSubject.firstName
+        binding.dateOfBirth.text = patientSubject.dateOfBirth
+        binding.gender.text = patientSubject.gender
+        binding.phoneNumber.text = patientSubject.observations.get("Phone number")
+        binding.address.text = patientSubject.address
         binding.proceedButton.setOnClickListener {
             viewModel.createHealthIdByAdhaarOtp().observe(this, Observer {
                 it?.let { resource ->
@@ -59,7 +44,8 @@ class PatientBioActivity : AppCompatActivity() {
                             binding.progressBar.visibility = View.GONE
                             resource.data?.let { data ->
                                 val intent = Intent(this, AbhaAddressActivity::class.java)
-                                intent.putExtra("healthId", data.healthIdNumber)
+                                PatientSubject().setABHANumber(data.healthIdNumber)
+                                intent.putExtra("healthIdNumber", data.healthIdNumber)
                                 startActivity(intent)
                             }
                         }

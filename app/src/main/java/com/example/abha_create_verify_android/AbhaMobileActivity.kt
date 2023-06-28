@@ -11,7 +11,6 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.abha_create_verify_android.data.api.ApiHelper
 import com.example.abha_create_verify_android.data.api.RetrofitBuilder
 import com.example.abha_create_verify_android.data.model.GenerateMobileOTPReq
-import com.example.abha_create_verify_android.data.model.VerifyAadhaarOTPResp
 import com.example.abha_create_verify_android.databinding.ActivityAbhaMobileBinding
 import com.example.abha_create_verify_android.utils.Status
 
@@ -31,7 +30,6 @@ class AbhaMobileActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         binding.proceedButton.setOnClickListener {
-            val patient = intent.getSerializableExtra("patient") as? VerifyAadhaarOTPResp;
             val mobileNumber = binding.mobileEditText.text.toString()
             viewModel.checkAndGenerateMobileOtp(GenerateMobileOTPReq(mobileNumber)).observe(this, Observer {
                 it?.let { resource ->
@@ -41,14 +39,11 @@ class AbhaMobileActivity : AppCompatActivity() {
                             resource.data?.let { data ->
                                 if(data.mobileLinked == "true") {
                                     val intent = Intent(this, PatientBioActivity::class.java)
-                                    intent.putExtra("patient", patient)
-                                    intent.putExtra("mobile", mobileNumber)
+                                    PatientSubject().setMobile(mobileNumber)
                                     startActivity(intent)
                                 }
                                 else {
                                     val intent = Intent(this, AbhaOTPActivity::class.java)
-                                    intent.putExtra("patient", patient)
-                                    intent.putExtra("mobile", mobileNumber)
                                     startActivity(intent)
                                 }
                             }

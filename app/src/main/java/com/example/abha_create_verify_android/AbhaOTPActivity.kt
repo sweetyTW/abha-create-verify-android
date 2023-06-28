@@ -31,8 +31,7 @@ class AbhaOTPActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         binding.proceedButton.setOnClickListener {
-            val patient = intent.getSerializableExtra("patient") as? VerifyAadhaarOTPResp;
-            val mobile = intent.getStringExtra("mobile");
+            binding.incorrectOTPText.visibility = View.GONE
             viewModel.verifyMobileOtp(VerifyOTPReq(binding.OTPEditText.text.toString())).observe(this, Observer {
                 it?.let { resource ->
                     when (resource.status) {
@@ -41,8 +40,6 @@ class AbhaOTPActivity : AppCompatActivity() {
                             binding.correctOTPText.visibility = View.VISIBLE
                             resource.data?.let { data ->
                                 val intent = Intent(this, PatientBioActivity::class.java)
-                                intent.putExtra("patient", patient)
-                                intent.putExtra("mobile", mobile)
                                 startActivity(intent)
                             }
                         }

@@ -1,6 +1,7 @@
 package com.example.abha_create_verify_android.data.api
 
 import com.example.abha_create_verify_android.data.model.CreateABHAResp
+import com.example.abha_create_verify_android.data.model.CreateAbhaAddressReq
 import com.example.abha_create_verify_android.data.model.GenerateAadhaarOTPReq
 import com.example.abha_create_verify_android.data.model.GenerateAadhaarOTPResp
 import com.example.abha_create_verify_android.data.model.GenerateMobileOTPReq
@@ -10,6 +11,7 @@ import com.example.abha_create_verify_android.data.model.VerifyOTPReq
 import okhttp3.ResponseBody
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface ApiService {
@@ -28,4 +30,11 @@ interface ApiService {
 
     @POST("hiprovider/v2/registration/aadhaar/createHealthIdByAdhaar")
     suspend fun createHealthIdByAdhaarOtp(): Response<CreateABHAResp>
+
+    @POST("hiprovider/v2/account/phr-linked")
+    suspend fun createAbhaAddress(@Body requestBody: CreateAbhaAddressReq): Response<String>
+
+    @GET("hiprovider/v1/account/update/phr-address")
+    suspend fun createDefaultAbhaAddress(): Response<String>
+
 }

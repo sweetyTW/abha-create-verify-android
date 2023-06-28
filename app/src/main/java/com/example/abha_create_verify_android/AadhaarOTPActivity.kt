@@ -30,6 +30,7 @@ class AadhaarOTPActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         binding.proceedButton.setOnClickListener {
+            binding.incorrectOTPText.visibility = View.GONE
             viewModel.verifyAadhaarOtp(VerifyOTPReq(binding.aadhaarOTPEditText.text.toString())).observe(this, Observer {
                 it?.let { resource ->
                     when (resource.status) {
@@ -38,7 +39,7 @@ class AadhaarOTPActivity : AppCompatActivity() {
                             binding.correctOTPText.visibility = View.VISIBLE
                             resource.data?.let { data ->
                                 val intent = Intent(this, AbhaMobileActivity::class.java)
-                                intent.putExtra("patient", data)
+                                PatientSubject().setDemographics(data)
                                 startActivity(intent)
                             }
                         }

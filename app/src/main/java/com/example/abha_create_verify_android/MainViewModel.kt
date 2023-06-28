@@ -2,6 +2,7 @@ package com.example.abha_create_verify_android
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
+import com.example.abha_create_verify_android.data.model.CreateAbhaAddressReq
 import com.example.abha_create_verify_android.data.model.ErrorResponse
 import com.example.abha_create_verify_android.data.model.GenerateAadhaarOTPReq
 import com.example.abha_create_verify_android.data.model.GenerateMobileOTPReq
@@ -95,6 +96,40 @@ class MainViewModel(private val mainRepository: MainRepository) : ViewModel() {
         emit(Resource.loading(data = null))
         try {
             val res = mainRepository.createHealthIdByAdhaarOtp()
+            if(res.code() == 202)
+                res.body()?.let {
+                    emit(Resource.success(data = it))
+                }
+            else {
+                val errorMessage = res.errorBody()?.let { handleErrorResponse(it) }!!
+                emit(Resource.error(data = null, message = errorMessage))
+            }
+        } catch (exception: Exception) {
+            emit(Resource.error(data = null, message = exception.message ?: "Error Occurred!"))
+        }
+    }
+
+    fun createAbhaAddress(createAbhaAddressReq : CreateAbhaAddressReq) = liveData(Dispatchers.IO) {
+        emit(Resource.loading(data = null))
+        try {
+            val res = mainRepository.createAbhaAddress(createAbhaAddressReq)
+            if(res.code() == 202)
+                res.body()?.let {
+                    emit(Resource.success(data = it))
+                }
+            else {
+                val errorMessage = res.errorBody()?.let { handleErrorResponse(it) }!!
+                emit(Resource.error(data = null, message = errorMessage))
+            }
+        } catch (exception: Exception) {
+            emit(Resource.error(data = null, message = exception.message ?: "Error Occurred!"))
+        }
+    }
+
+    fun createDefaultAbhaAddress() = liveData(Dispatchers.IO) {
+        emit(Resource.loading(data = null))
+        try {
+            val res = mainRepository.createDefaultAbhaAddress()
             if(res.code() == 202)
                 res.body()?.let {
                     emit(Resource.success(data = it))
