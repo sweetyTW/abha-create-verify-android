@@ -1,6 +1,7 @@
 package com.example.abha_create_verify_android.data.model
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 
 data class VerifyAadhaarOTPResp(
@@ -16,4 +17,4 @@ data class VerifyAadhaarOTPResp(
     @SerializedName("district") val district: String,
     @SerializedName("state") val state: String,
     @SerializedName("pincode") val pincode: String
-)
+) : Serializable

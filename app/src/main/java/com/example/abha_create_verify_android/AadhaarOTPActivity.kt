@@ -1,5 +1,6 @@
 package com.example.abha_create_verify_android
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -36,6 +37,9 @@ class AadhaarOTPActivity : AppCompatActivity() {
                             binding.progressBar.visibility = View.GONE
                             binding.correctOTPText.visibility = View.VISIBLE
                             resource.data?.let { data ->
+                                val intent = Intent(this, AbhaMobileActivity::class.java)
+                                intent.putExtra("patient", data)
+                                startActivity(intent)
                             }
                         }
                         Status.ERROR -> {
