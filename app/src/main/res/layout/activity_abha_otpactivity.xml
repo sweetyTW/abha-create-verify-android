@@ -74,7 +74,8 @@
             android:text="@string/incorrect_otp"
             android:textColor="@color/black"
             android:textSize="13sp"
-            android:textStyle="italic" />
+            android:textStyle="italic"
+            android:visibility="invisible" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/correctOTPText"
@@ -88,7 +89,8 @@
             android:text="@string/correct_otp"
             android:textColor="@color/black"
             android:textSize="13sp"
-            android:textStyle="italic" />
+            android:textStyle="italic"
+            android:visibility="invisible" />
 
 
         <androidx.appcompat.widget.AppCompatButton

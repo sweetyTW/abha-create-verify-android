@@ -36,23 +36,21 @@ class PatientBioActivity : AppCompatActivity() {
         binding.dateOfBirth.text = patient?.birthdate.toString()
         binding.gender.text = patient?.gender.toString()
         binding.phoneNumber.text = intent.getStringExtra("mobile").toString()
-//        val address = StringBuilder()
-//        listOf(
-//            patient?.house,
-//            patient?.street,
-//            patient?.villageTownCity,
-//            patient?.district,
-//            patient?.state,
-//            patient?.pincode
-//        ).forEach { str ->
-//            if (str != null) {
-//                if (address.isNotEmpty()) {
-//                    address.append(", ")
-//                }
-//                address.append(str)
-//            }
-//        }
-//        binding.address.text =  address.toString()
+        val address = StringBuilder()
+        listOfNotNull(
+            patient?.house,
+            patient?.street,
+            patient?.villageTownCity,
+            patient?.district,
+            patient?.state,
+            patient?.pincode
+        ).forEach { str ->
+            if (address.isNotEmpty()) {
+                address.append(", ")
+            }
+            address.append(str)
+        }
+        binding.address.text =  address.toString()
         binding.proceedButton.setOnClickListener {
             viewModel.createHealthIdByAdhaarOtp().observe(this, Observer {
                 it?.let { resource ->
