@@ -50,9 +50,9 @@ afterEvaluate {
             release(MavenPublication) {
                 from components.release
 
-                groupId = 'com.github.bahmni-hwc'
-                artifactId = 'sample-abha'
-                version = '1.0'
+                groupId = 'com.github.sweetyTW'
+                artifactId = 'abha-sample'
+                version = '6.2'
             }
         }
     }
