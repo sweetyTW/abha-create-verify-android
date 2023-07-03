@@ -52,7 +52,7 @@ afterEvaluate {
 
                 groupId = 'com.github.sweetyTW'
                 artifactId = 'abha-create-verify-android'
-                version = '6.3'
+                version = '6.4'
             }
         }
     }
